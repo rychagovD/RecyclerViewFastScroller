@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 apply plugin: 'com.minyushov.bintray'
 
 android {
@@ -19,16 +18,16 @@ android {
 
 dependencies {
 	implementation "androidx.recyclerview:recyclerview:1.0.0"
-	implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 }
 
 bintrayUpload {
+	version = "0.1.4"
 	artifactId = "recyclerview-fastscroller"
-	repo = libraryRepo
-	groupId = libraryGroupId
-	version = libraryVersion
-	vcsUrl = libraryVcsUrl
-	license = libraryLicense
+	organization = "mercdev"
+	repo = "android"
+	groupId = "com.mercdev.android"
+	vcsUrl = "https://github.com/rychagovD/RecyclerViewFastScroller.git"
+	license = "Apache-2.0"
 	dryRun = false
 	docs = false
 }
