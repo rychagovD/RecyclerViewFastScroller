@@ -7,20 +7,20 @@ import xyz.danoz.recyclerviewfastscroller.calculation.VerticalScrollBoundsProvid
  */
 public class VerticalScreenPositionCalculator {
 
-    private final VerticalScrollBoundsProvider mVerticalScrollBoundsProvider;
+	private final VerticalScrollBoundsProvider mVerticalScrollBoundsProvider;
 
-    public VerticalScreenPositionCalculator(VerticalScrollBoundsProvider scrollBoundsProvider) {
-        mVerticalScrollBoundsProvider = scrollBoundsProvider;
-    }
+	public VerticalScreenPositionCalculator(VerticalScrollBoundsProvider scrollBoundsProvider) {
+		mVerticalScrollBoundsProvider = scrollBoundsProvider;
+	}
 
-    public float getYPositionFromScrollProgress(float scrollProgress) {
-        return Math.max(
-                mVerticalScrollBoundsProvider.getMinimumScrollY(),
-                Math.min(
-                        scrollProgress * mVerticalScrollBoundsProvider.getMaximumScrollY(),
-                        mVerticalScrollBoundsProvider.getMaximumScrollY()
-                )
-        );
-    }
+	public float getYPositionFromScrollProgress(float scrollProgress) {
+		return Math.max(
+				mVerticalScrollBoundsProvider.getMinimumScrollY(),
+				Math.min(
+						scrollProgress * mVerticalScrollBoundsProvider.getMaximumScrollY(),
+						mVerticalScrollBoundsProvider.getMaximumScrollY()
+				)
+		);
+	}
 
 }
